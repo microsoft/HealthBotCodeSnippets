@@ -37,7 +37,7 @@ An exemplary JWT token payload before encoding is shown here:
 
 The JWT token is placed in the authorization header, according to the following example:
 
-Authorization:BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoibXlUZW5hbnQiLCJpYXQiOiIxNTA3MDU2OTAwIn0.MN4DcxO2mLsltEYNpXbC6T6Bjxj3-rxIAObngZIw4-U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoibXlUZW5hbnQiLCJpYXQiOiIxNTA3MDU2OTAwIn0.MN4DcxO2mLsltEYNpXbC6T6Bjxj3-rxIAObngZIw4-U
 
 It is recommended to implement the JWT tokens with standard libraries, for example: Node.js &quot;jsonwebtoken&quot; library.
 
@@ -51,7 +51,10 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 | Special headers | Authorization: Bearer &lt;JWT Token&gt; |
 | Request Parameters | None |
 | Response | An array of JSON objects in the response body. Every object represents a Health Bot scenario |
-| Examples | GET [https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1](https://healthbot.microsoft.com/api/account/healthagentprod/scenarios)Authorization:BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWwHost: healthbot.microsoft.com HTTP/1.1 200 OK[exported scenarios will appear in the response body]  |
+| Examples | GET [https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1](https://healthbot.microsoft.com/api/account/healthagentprod/scenarios)
+Authorization: BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
+Host: healthbot.microsoft.com HTTP/1.1 200 OK
+[exported scenarios will appear in the response body]  |
 | Comments | N/A |
 
 ### Import Scenarios
@@ -62,5 +65,10 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 | Special headers | Authorization: Bearer &lt;JWT Token&gt;. Content-type: application/jsoncontent-type: application/json |
 | Request Parameters | An array of JSON objects in request body. Every object represents a Health Bot scenario |
 | Response | 200 OK in case of success |
-| Examples | POST [https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1](https://healthbot.microsoft.com/api/account/healthagentprod/scenarios)Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cEHost: healthbot.microsoft.comcontent-type: application/jsonContent-Length: 51116 [scenarios in request body]   |
+| Examples | POST [https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1](https://healthbot.microsoft.com/api/account/healthagentprod/scenarios)
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
+Host: healthbot.microsoft.com
+content-type: application/json
+Content-Length: 51116 
+[scenarios in request body]   |
 | Comments | When posting new scenarios, they will be added to the existing scenarios in the scenario editor. Scenario with the same name will be overridden. |
