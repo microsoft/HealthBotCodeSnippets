@@ -56,7 +56,8 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 
 **Response:** An array of JSON objects in the response body. Every object represents a Health Bot scenario
 
-**Examples:** 
+**Examples:**
+
 GET https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
@@ -82,6 +83,7 @@ HTTP/1.1 200 OK
 **Response:** 200 OK in case of success
 
 **Examples:**
+
 POST https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
