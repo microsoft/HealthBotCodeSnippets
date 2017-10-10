@@ -66,7 +66,7 @@ Host: healthbot.microsoft.com
 
 HTTP/1.1 200 OK
 
-[exported scenarios will appear in the response body]  |
+[exported scenarios will appear in the response body] 
 
 **Comments:** N/A
 
