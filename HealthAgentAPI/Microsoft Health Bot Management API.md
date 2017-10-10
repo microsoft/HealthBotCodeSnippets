@@ -58,9 +58,13 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 
 **Examples:** 
 GET https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
+
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
+
 Host: healthbot.microsoft.com 
+
 HTTP/1.1 200 OK
+
 [exported scenarios will appear in the response body]  |
 
 **Comments:** N/A
@@ -79,9 +83,13 @@ HTTP/1.1 200 OK
 
 **Examples:**
 POST https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
+
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
+
 Host: healthbot.microsoft.com
+
 Content-type: application/jsonContent-Length: 51116 
+
 [scenarios in request body] 
 
 **Comments:** When posting new scenarios, they will be added to the existing scenarios in the scenario editor. Scenario with the same name will be overridden. 
