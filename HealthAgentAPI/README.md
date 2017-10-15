@@ -40,13 +40,13 @@ The JWT token is placed in the authorization header, according to the following 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoibXlUZW5hbnQiLCJpYXQiOiIxNTA3MDU2OTAwIn0.MN4DcxO2mLsltEYNpXbC6T6Bjxj3-rxIAObngZIw4-U 
 
 
-It is recommended to implement the JWT tokens with standard libraries, for example: Node.js &quot;jsonwebtoken&quot; library.
+It is recommended to implement the JWT tokens with standard libraries, for example: Node.js &quot;jsonwebtoken&quot; library.More information at https://jwt.io/.
 
 ## API Resources
 
 ### Export Scenarios
 
-**URL: **https://healthbot.microsoft.com/api/account/&lt;tenantName&gt;/scenarios
+**URL: **https://healthbot.microsoft.com/api/account/<tenantName>/scenarios
 
 **Method:** GET
 
@@ -72,7 +72,7 @@ HTTP/1.1 200 OK
 
 ### Import Scenarios
 
-**URL:** https://healthbot.microsoft.com/api/account/&lt;tenantName&gt;/scenarios
+**URL:** https://healthbot.microsoft.com/api/account/<tenantName>/scenarios
 
 **Method:** POST
 
