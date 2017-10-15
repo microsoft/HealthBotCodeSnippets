@@ -46,7 +46,7 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 
 ### Export Scenarios
 
-**URL: **https://healthbot.microsoft.com/api/account/<tenantName>/scenarios
+**URL: **https://healthbot.microsoft.com/api/account/&lt;tenantName&gt;/scenarios
 
 **Method:** GET
 
@@ -72,7 +72,7 @@ HTTP/1.1 200 OK
 
 ### Import Scenarios
 
-**URL:** https://healthbot.microsoft.com/api/account/<tenantName>/scenarios
+**URL:** https://healthbot.microsoft.com/api/account/&lt;tenantName&gt;/scenarios
 
 **Method:** POST
 
