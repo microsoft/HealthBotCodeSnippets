@@ -1,5 +1,7 @@
 # Microsoft Health Bot Management API
 
+**Note: In order you use this Web Chat with the Health Bot secvice, you will need to obtain your Web Chat secret from the Health Bot Team. Please refer to [Microsoft Health Bot](https://www.microsoft.com/en-us/research/project/health-bot/) for a private preview and details.**
+
 ## Background
 
 The Microsoft Health Bot provides API to enable programmatic management actions. For example, programmatic import and export of scenarios from the scenario editor.
@@ -27,13 +29,12 @@ The JWT token is signed with an API secret, called API\_JWT\_secret. The secret 
 
 An exemplary JWT token payload before encoding is shown here:
 
+```JSON 
 {
-
-  &quot;tenantName&quot;: &quot;myTenant&quot;,
-
-  &quot;iat&quot;:&quot;1507056900&quot;
-
+  "tenantName": "myTenant",
+  "iat": "1507056900"  
 }
+```
 
 The JWT token is placed in the authorization header, according to the following example:
 
