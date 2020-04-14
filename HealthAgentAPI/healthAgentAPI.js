@@ -9,6 +9,7 @@ const action = process.argv[2];
 const tenantName = process.argv[3]
 const jwtSecret = process.argv[4];
 
+// Change the BASE_URL to reflect the FQDN used to login to the health bot portal.
 const BASE_URL = "https://healthbot.microsoft.com/";
 
 const jwtToken = jwt.sign({"tenantName": tenantName}, jwtSecret);
