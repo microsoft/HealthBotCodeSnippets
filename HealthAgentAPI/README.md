@@ -43,6 +43,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoib
 
 It is recommended to implement the JWT tokens with standard libraries, for example: Node.js &quot;jsonwebtoken&quot; library.More information at https://jwt.io/.
 
+### API URL
+
+The fully qualified domain name(FQDN) should match the FQDN of the portal used to log into the health bot admin panel for example: 
+
+**URL:** https://us.healthbot.microsoft.com/
+
 ## API Resources
 
 ### Export Scenarios
