@@ -9,9 +9,11 @@ const action = process.argv[2];
 const tenantName = process.argv[3]
 const jwtSecret = process.argv[4];
 
-const BASE_URL = "https://healthbot.microsoft.com/";
-
-const jwtToken = jwt.sign({"tenantName": tenantName}, jwtSecret);
+const BASE_URL = "https://us.healthbot.microsoft.com/";
+const jwtToken = jwt.sign({
+    tenantName: tenantName,
+    iat: Math.floor(Date.now()  / 1000)
+  }, jwtSecret);
 
 if (action === "post_scenarios") {
     const options = {

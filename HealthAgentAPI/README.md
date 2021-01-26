@@ -16,6 +16,12 @@ The provided [code samples](https://github.com/Microsoft/HealthBotCodeSnippets/t
 
 The API is implemented with REST architecture, enabling to perform CRUD operations on resources that are represented as URLs.
 
+### API URL
+
+The fully qualified domain name(FQDN) should match the FQDN of the portal used to log into the health bot admin panel for example: 
+
+**URL:** https://us.healthbot.microsoft.com/
+
 ### API Security
 
 The API is protected with standard JWT tokens. The JWT tokens contain two claims:
