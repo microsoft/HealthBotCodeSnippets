@@ -4,9 +4,9 @@
   "description": "",
   "main": "healthAgentAPI.js",
   "dependencies": {
+    "jsonwebtoken": "^8.0.1",
     "request": "^2.82.0",
-    "request-promise": "^4.2.2",
-    "jsonwebtoken": "^8.0.1"
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {},
   "scripts": {
