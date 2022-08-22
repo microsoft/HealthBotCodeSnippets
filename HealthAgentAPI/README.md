@@ -19,9 +19,25 @@ The API is implemented with REST architecture, enabling to perform CRUD operatio
 ### API URL
 
 The fully qualified domain name(FQDN) should match the FQDN of the portal used to log into the health bot admin panel for example: 
+```
+URL: https://<region>.healthbot.microsoft.com/
+```
+```
+List of regions:
 
-**URL:** https://us.healthbot.microsoft.com/
-
+eastus
+westeurope
+australiaeast
+centralindia
+eastus2
+eastus2euap
+northeurope
+southcentralus
+southeastasia
+uksouth
+westcentralus
+westus2
+```
 ### API Security
 
 The API is protected with standard JWT tokens. The JWT tokens contain two claims:
@@ -53,7 +69,9 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 
 ### Export Scenarios
 
-**URL: **https://healthbot.microsoft.com/api/account/YourTenantName/scenarios
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/scenarios
+```
 
 **Method:** GET
 
@@ -65,7 +83,7 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 
 **Examples:**
 
-GET https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
+GET https://eastus.healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
 
@@ -79,7 +97,9 @@ HTTP/1.1 200 OK
 
 ### Import Scenarios
 
-**URL:** https://healthbot.microsoft.com/api/account/YourTenantName/scenarios
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/scenarios
+```
 
 **Method:** POST
 
@@ -91,7 +111,7 @@ HTTP/1.1 200 OK
 
 **Examples:**
 
-POST https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
+POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
 
