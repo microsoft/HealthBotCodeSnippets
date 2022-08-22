@@ -177,3 +177,57 @@ Content-type: application/jsonContent-Length: 51116
 
 [scenarios in request body] 
 
+### Export Resources
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/resources
+```
+
+**Method:** GET
+
+**Special headers:** Authorization: Bearer &lt;JWT Token&gt;
+
+**Request Parameters:** None
+
+**Response:** An array of JSON objects in the response body. Every object represents a Resource 
+
+**Examples:**
+
+GET https://eastus.healthbot.microsoft.com/api/account/healthagentprod/resources HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
+
+Host: healthbot.microsoft.com 
+
+HTTP/1.1 200 OK
+
+[exported scenarios will appear in the response body] 
+
+**Comments:** N/A
+
+### Import Resources
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/resources
+```
+
+**Method:** POST
+
+**Special headers:**  Authorization: Bearer &lt;JWT Token&gt; , Content-type: application/json 
+
+**Request Parameters:** An array of JSON objects in request body. Every object represents a Health Bot scenario
+
+**Response:** 200 OK in case of success
+
+**Examples:**
+
+POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/resources HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
+
+Host: healthbot.microsoft.com
+
+Content-type: application/jsonContent-Length: 51116 
+
+[scenarios in request body] 
+
