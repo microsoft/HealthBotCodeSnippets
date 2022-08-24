@@ -22,9 +22,9 @@ The fully qualified domain name(FQDN) should match the FQDN of the portal used t
 ```
 URL: https://<region>.healthbot.microsoft.com/
 ```
-```
 List of regions:
 
+```
 eastus
 westeurope
 australiaeast
@@ -38,6 +38,7 @@ uksouth
 westcentralus
 westus2
 ```
+
 ### API Security
 
 The API is protected with standard JWT tokens. The JWT tokens contain two claims:
@@ -280,9 +281,9 @@ Body Pormat:
     }],
     "system": []
 }
-
 ```
 List of language:
+```
  en-us,
  ar-sa,
  cs-cz,
@@ -319,4 +320,15 @@ Host: healthbot.microsoft.com
 
 Content-type: application/jsonContent-Length: 51116 
 
-[Localization strings in request body] 
+Request body:
+```
+{
+    "custom": [{
+        "en-us": "test1",
+        "stringId": "test1"
+
+    }],
+    "system": []
+}
+```
+
