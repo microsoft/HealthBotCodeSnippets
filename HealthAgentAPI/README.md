@@ -258,7 +258,7 @@ HTTP/1.1 200 OK
 
 **Comments:** N/A
 
-### Import  Localization
+### Import Localization
 
 ```
 URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/localization
@@ -269,6 +269,43 @@ URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/local
 **Special headers:**  Authorization: Bearer &lt;JWT Token&gt; , Content-type: application/json 
 
 **Request Parameters:** An array of JSON objects in request body. Every object represents a  Localization string of Health Bot scenario
+
+Body Pormat: 
+```
+{
+    "custom": [{
+        "<language>": "test",
+        "stringId": "test"
+
+    }],
+    "system": []
+}
+
+```
+List of language:
+ en-us,
+ ar-sa,
+ cs-cz,
+ de-de,
+ el-gr,
+ en-gb,
+ es-es,
+ es-mx,
+ et-ee,
+ fr-ca,
+ fr-fr,
+ it-it,
+ nl-nl,
+ pl-pl,
+ pt-br,
+ pt-pt,
+ ro-ro,
+ ru-ru,
+ sk-sk,
+ tr-tr,
+ uk-ua,
+ zh-cn
+```
 
 **Response:** 200 OK in case of success
 
@@ -282,4 +319,4 @@ Host: healthbot.microsoft.com
 
 Content-type: application/jsonContent-Length: 51116 
 
-[scenarios in request body] 
+[Localization strings in request body] 
