@@ -215,7 +215,7 @@ URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/resou
 
 **Special headers:**  Authorization: Bearer &lt;JWT Token&gt; , Content-type: application/json 
 
-**Request Parameters:** An array of JSON objects in request body. Every object represents a Health Bot scenario
+**Request Parameters:** An array of JSON objects in request body. Every object represents a Resourse of Health Bot scenario
 
 **Response:** 200 OK in case of success
 
@@ -231,3 +231,56 @@ Content-type: application/jsonContent-Length: 51116
 
 [scenarios in request body] 
 
+### Export Localization
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/localization
+```
+
+**Method:** GET
+
+**Special headers:** Authorization: Bearer &lt;JWT Token&gt;
+
+**Request Parameters:** None
+
+**Response:** An array of JSON objects in the response body. Every object represents a  localization string  
+
+**Examples:**
+
+GET https://eastus.healthbot.microsoft.com/api/account/healthagentprod/localization 
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
+
+Host: healthbot.microsoft.com 
+
+HTTP/1.1 200 OK
+
+[exported scenarios will appear in the response body] 
+
+**Comments:** N/A
+
+### Import  Localization
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/localization
+```
+
+**Method:** POST
+
+**Special headers:**  Authorization: Bearer &lt;JWT Token&gt; , Content-type: application/json 
+
+**Request Parameters:** An array of JSON objects in request body. Every object represents a  Localization string of Health Bot scenario
+
+**Response:** 200 OK in case of success
+
+**Examples:**
+
+POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/localization HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
+
+Host: healthbot.microsoft.com
+
+Content-type: application/jsonContent-Length: 51116 
+
+[scenarios in request body] 
