@@ -147,7 +147,7 @@ Host: healthbot.microsoft.com
 
 HTTP/1.1 200 OK
 
-[exported scenarios will appear in the response body] 
+[exported bot backup will appear in the response body] 
 
 **Comments:** N/A
 
@@ -201,7 +201,7 @@ Host: healthbot.microsoft.com
 
 HTTP/1.1 200 OK
 
-[exported scenarios will appear in the response body] 
+[exported resources will appear in the response body] 
 
 **Comments:** N/A
 
@@ -215,7 +215,8 @@ URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/resou
 
 **Special headers:**  Authorization: Bearer &lt;JWT Token&gt; , Content-type: application/json 
 
-**Request Parameters:** An array of JSON objects in request body. Every object represents a Resourse of Health Bot scenario
+**Request Parameters:** Resourse Files in request body. Every File represents a Resourse of Health Bot scenario
+**The file name cannot contain spaces or special characters  
 
 **Response:** 200 OK in case of success
 
@@ -227,9 +228,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoia
 
 Host: healthbot.microsoft.com
 
-Content-type: application/jsonContent-Length: 51116 
-
-[scenarios in request body] 
+[Resources in request body] 
 
 ### Export Localization
 
