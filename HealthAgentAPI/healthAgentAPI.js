@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const rp = require("request-promise");
+const fs = require('fs')
 
 if (process.argv.length !== 5) {
     console.log("Usage: node healthAgentAPI.js <post_scenarios|get_scenarios> <tenantName> <API_JWT_secret>");
@@ -9,11 +10,13 @@ const action = process.argv[2];
 const tenantName = process.argv[3]
 const jwtSecret = process.argv[4];
 
-const BASE_URL = "https://us.healthbot.microsoft.com/";
+const BASE_URL = "https://eastus.healthbot.microsoft.com/";
 const jwtToken = jwt.sign({
     tenantName: tenantName,
     iat: Math.floor(Date.now()  / 1000)
   }, jwtSecret);
+
+/**** Scenarios ****/
 
 if (action === "post_scenarios") {
     const options = {
@@ -52,6 +55,145 @@ if (action === "get_scenarios") {
     const options = {
         method: 'GET',
         uri: `${BASE_URL}api/account/${tenantName}/scenarios`,
+        headers: {
+            'Authorization': 'Bearer ' + jwtToken
+        }
+    };
+
+    rp(options)
+        .then(function (parsedBody) {
+            console.log(parsedBody);
+        })
+        .catch(function (err) {
+            console.log(err.message);
+        });
+}
+
+/**** Backup ****/
+
+// TODO
+if (action === "post_backup") {
+    const options = {
+        method: 'POST',
+        uri: `${BASE_URL}api/account/${tenantName}/backup`,
+        headers: {
+            'Authorization': 'Bearer ' + jwtToken
+        },
+        body: [
+            {
+                "hbs":""
+            }
+        ],
+        json: true
+    };
+
+    rp(options)
+        .then(function (parsedBody) {
+            console.log(parsedBody);
+        })
+        .catch(function (err) {
+            console.log(err.message);
+        });
+}
+
+if (action === "get_backup") {
+    const options = {
+        method: 'GET',
+        uri: `${BASE_URL}api/account/${tenantName}/backup`,
+        headers: {
+            'Authorization': 'Bearer ' + jwtToken
+        }
+    };
+    rp(options)
+        .then(function (parsedBody) {
+            console.log(parsedBody);
+        })
+        .catch(function (err) {
+            console.log(err.message);
+        });
+}
+
+/**** Resources ****/
+
+if (action === "post_resources") {
+    const options = {
+        method: 'POST',
+        uri: `${BASE_URL}api/account/${tenantName}/resources`,
+        headers: {
+            'Authorization': 'Bearer ' + jwtToken
+        },
+        formData: {
+            file: {
+                value: fs.readFileSync('myfile.txt'),
+                options: {
+                    filename: 'myfile.txt',
+                    contentType: 'text/plain'
+                }
+            }
+        },
+        json: true
+    };
+
+    rp(options)
+        .then(function (parsedBody) {
+            console.log(parsedBody);
+        })
+        .catch(function (err) {
+            console.log(err.message);
+        });
+}
+
+if (action === "get_resources") {
+    const options = {
+        method: 'GET',
+        uri: `${BASE_URL}api/account/${tenantName}/resources`,
+        headers: {
+            'Authorization': 'Bearer ' + jwtToken
+        }
+    };
+
+    rp(options)
+        .then(function (parsedBody) {
+            console.log(parsedBody);
+        })
+        .catch(function (err) {
+            console.log(err.message);
+        });
+}
+
+/**** Localization ****/
+
+if (action === "post_localization") {
+    const options = {
+        method: 'POST',
+        uri: `${BASE_URL}api/account/${tenantName}/localization`,
+        headers: {
+            'Authorization': 'Bearer ' + jwtToken
+        },
+        body: {
+            "custom": [{
+                "en-us": "test1",
+                "stringId": "test1"
+
+            }],
+            "system": []
+        },
+        json: true
+    };
+
+    rp(options)
+        .then(function (parsedBody) {
+            console.log(parsedBody);
+        })
+        .catch(function (err) {
+            console.log(err.message);
+        });
+}
+
+if (action === "get_localization") {
+    const options = {
+        method: 'GET',
+        uri: `${BASE_URL}api/account/${tenantName}/localization`,
         headers: {
             'Authorization': 'Bearer ' + jwtToken
         }
