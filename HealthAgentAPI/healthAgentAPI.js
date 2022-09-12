@@ -71,7 +71,6 @@ if (action === "get_scenarios") {
 
 /**** Backup ****/
 
-// TODO
 if (action === "post_backup") {
     const options = {
         method: 'POST',
@@ -81,7 +80,7 @@ if (action === "post_backup") {
         },
         body: [
             {
-                "hbs":""
+                "hbs": "Get Backup Output"
             }
         ],
         json: true
