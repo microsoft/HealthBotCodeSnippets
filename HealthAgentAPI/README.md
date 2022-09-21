@@ -19,8 +19,25 @@ The API is implemented with REST architecture, enabling to perform CRUD operatio
 ### API URL
 
 The fully qualified domain name(FQDN) should match the FQDN of the portal used to log into the health bot admin panel for example: 
+```
+URL: https://<region>.healthbot.microsoft.com/
+```
+List of regions:
 
-**URL:** https://us.healthbot.microsoft.com/
+```
+eastus
+westeurope
+australiaeast
+centralindia
+eastus2
+eastus2euap
+northeurope
+southcentralus
+southeastasia
+uksouth
+westcentralus
+westus2
+```
 
 ### API Security
 
@@ -53,7 +70,9 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 
 ### Export Scenarios
 
-**URL: **https://healthbot.microsoft.com/api/account/YourTenantName/scenarios
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/scenarios
+```
 
 **Method:** GET
 
@@ -65,7 +84,7 @@ It is recommended to implement the JWT tokens with standard libraries, for examp
 
 **Examples:**
 
-GET https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
+GET https://eastus.healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
 
@@ -79,7 +98,9 @@ HTTP/1.1 200 OK
 
 ### Import Scenarios
 
-**URL:** https://healthbot.microsoft.com/api/account/YourTenantName/scenarios
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/scenarios
+```
 
 **Method:** POST
 
@@ -91,7 +112,7 @@ HTTP/1.1 200 OK
 
 **Examples:**
 
-POST https://healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
+POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
 
@@ -102,3 +123,212 @@ Content-type: application/jsonContent-Length: 51116
 [scenarios in request body] 
 
 **Comments:** When posting new scenarios, they will be added to the existing scenarios in the scenario editor. Scenario with the same name will be overridden. 
+
+### Export bot backup
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/backup
+```
+
+**Method:** GET
+
+**Special headers:** Authorization: Bearer &lt;JWT Token&gt;
+
+**Request Parameters:** None
+
+**Response:** A file in the response body. The file represents the bot backup.
+
+**Examples:**
+
+GET https://eastus.healthbot.microsoft.com/api/account/healthagentprod/backup HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
+
+Host: healthbot.microsoft.com 
+
+HTTP/1.1 200 OK
+
+[exported bot backup will appear in the response body] 
+
+**Comments:** N/A
+
+### Restore from backup
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/backup
+```
+
+**Method:** POST
+
+**Special headers:**  Authorization: Bearer &lt;JWT Token&gt; , Content-type: application/json 
+
+**Request Parameters:** A file in the request body. The file represents the bot backup.
+
+**Response:** 200 OK in case of success
+
+**Examples:**
+
+POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
+
+Host: healthbot.microsoft.com
+
+Content-type: application/jsonContent-Length: 51116 
+
+[scenarios in request body] 
+
+### Export Resources
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/resources
+```
+
+**Method:** GET
+
+**Special headers:** Authorization: Bearer &lt;JWT Token&gt;
+
+**Request Parameters:** None
+
+**Response:** An array of JSON objects in the response body. Every object represents a Resource 
+
+**Examples:**
+
+GET https://eastus.healthbot.microsoft.com/api/account/healthagentprod/resources HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
+
+Host: healthbot.microsoft.com 
+
+HTTP/1.1 200 OK
+
+[exported resources will appear in the response body] 
+
+**Comments:** N/A
+
+### Import Resources
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/resources
+```
+
+**Method:** POST
+
+**Special headers:**  Authorization: Bearer &lt;JWT Token&gt; , Content-type: application/json 
+
+**Request Parameters:** Resourse Files in request body. Every File represents a Resourse of Health Bot scenario
+**The file name cannot contain spaces or special characters  
+
+**Response:** 200 OK in case of success
+
+**Examples:**
+
+POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/resources HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
+
+Host: healthbot.microsoft.com
+
+[Resources in request body] 
+
+### Export Localization
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/localization
+```
+
+**Method:** GET
+
+**Special headers:** Authorization: Bearer &lt;JWT Token&gt;
+
+**Request Parameters:** None
+
+**Response:** An array of JSON objects in the response body. Every object represents a  localization string  
+
+**Examples:**
+
+GET https://eastus.healthbot.microsoft.com/api/account/healthagentprod/localization 
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYwODAwfQ.x9oyA4kgfIgV5R1CpvMQeUYuP6FSlI65lx7Og8nMuWw
+
+Host: healthbot.microsoft.com 
+
+HTTP/1.1 200 OK
+
+[exported scenarios will appear in the response body] 
+
+**Comments:** N/A
+
+### Import Localization
+
+```
+URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/localization
+```
+
+**Method:** POST
+
+**Special headers:**  Authorization: Bearer &lt;JWT Token&gt; , Content-type: application/json 
+
+**Request Parameters:** An array of JSON objects in request body. Every object represents a  Localization string of Health Bot scenario
+
+Body Pormat: 
+```
+{
+    "custom": [{
+        "<language>": "test",
+        "stringId": "test"
+
+    }],
+    "system": []
+}
+```
+List of language:
+```
+ en-us,
+ ar-sa,
+ cs-cz,
+ de-de,
+ el-gr,
+ en-gb,
+ es-es,
+ es-mx,
+ et-ee,
+ fr-ca,
+ fr-fr,
+ it-it,
+ nl-nl,
+ pl-pl,
+ pt-br,
+ pt-pt,
+ ro-ro,
+ ru-ru,
+ sk-sk,
+ tr-tr,
+ uk-ua,
+ zh-cn
+```
+
+**Response:** 200 OK in case of success
+
+**Examples:**
+
+POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/localization HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
+
+Host: healthbot.microsoft.com
+
+Content-type: application/jsonContent-Length: 51116 
+
+Request body:
+```
+{
+    "custom": [{
+        "en-us": "test1",
+        "stringId": "test1"
+
+    }],
+    "system": []
+}
+```
+
