@@ -1,10 +1,22 @@
 # Microsoft Health Bot Management API
 
-**Note: In order you use this API with the Health Bot secvice, you will need to register with the Health Bot Team. Please refer to [Microsoft Health Bot](https://www.microsoft.com/en-us/research/project/health-bot/) for a private preview and details.**
+**Note: In order you use this API with the Health Bot secvice, you will need to register with the Health Bot Team. Please refer to [Microsoft Health Bot](https://www.microsoft.com/en-us/research/project/health-bot/) for a details.**
 
 ## Background
 
 The Microsoft Health Bot provides API to enable programmatic management actions. For example, programmatic import and export of scenarios from the scenario editor.
+
+## The Management API supports the following actions:
+
+ 1. Import/Export of scenarios
+
+ 2. Create bot backup
+
+ 3. Restore from backup
+
+ 4. Import/Export of resource files
+
+ 5. Import/Export of localization strings
 
 ## How to use the API
 
@@ -176,7 +188,6 @@ Host: healthbot.microsoft.com
 
 Content-type: application/jsonContent-Length: 51116 
 
-[scenarios in request body] 
 
 ### Export Resources
 
@@ -255,7 +266,6 @@ Host: healthbot.microsoft.com
 
 HTTP/1.1 200 OK
 
-[exported scenarios will appear in the response body] 
 
 **Comments:** N/A
 
