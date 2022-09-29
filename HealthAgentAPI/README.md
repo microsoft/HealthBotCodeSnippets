@@ -22,7 +22,7 @@ The Microsoft Health Bot provides API to enable programmatic management actions.
 
 ### Code samples
 
-The provided [code samples](https://github.com/Microsoft/HealthBotCodeSnippets/tree/master/HealthAgentAPI) demonstrate how to use the API.
+The provided [code samples](https://github.com/microsoft/HealthBotCodeSnippets/blob/master/HealthAgentAPI/healthAgentAPI.js) demonstrate how to use the API.
 
 ### API Structure
 
