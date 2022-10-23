@@ -1,7 +1,5 @@
 # Microsoft Health Bot Management API
 
-**Note: In order you use this API with the Health Bot secvice, you will need to register with the Health Bot Team. Please refer to [Microsoft Health Bot](https://www.microsoft.com/en-us/research/project/health-bot/) for a details.**
-
 ## Background
 
 The Microsoft Health Bot provides API to enable programmatic management actions. For example, programmatic import and export of scenarios from the scenario editor.
