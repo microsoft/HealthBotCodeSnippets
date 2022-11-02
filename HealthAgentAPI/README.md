@@ -178,7 +178,7 @@ URL: https://<region>.healthbot.microsoft.com/api/account/<yourTenantName>/backu
 
 **Examples:**
 
-POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/scenarios HTTP/1.1
+POST https://eastus.healthbot.microsoft.com/api/account/healthagentprod/backup HTTP/1.1
 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnROYW1lIjoiaGVhbHRoYWdlbnRwcm9kIiwiaWF0IjoxNTA2OTYxMzAwfQ.YGayhOc0fOaLRK4cWzRIhSsNH0zWOTy7Pe2PWSY5-cE
 
