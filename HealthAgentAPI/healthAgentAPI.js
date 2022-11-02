@@ -78,11 +78,10 @@ if (action === "post_backup") {
         headers: {
             'Authorization': 'Bearer ' + jwtToken
         },
-        body: [
-            {
+        body: {
                 "hbs": "Get Backup Output"
             }
-        ],
+        ,
         json: true
     };
 
