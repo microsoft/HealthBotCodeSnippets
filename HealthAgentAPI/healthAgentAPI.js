@@ -13,7 +13,7 @@ const jwtSecret = process.argv[4];
 const BASE_URL = "https://eastus.healthbot.microsoft.com/";
 const jwtToken = jwt.sign({
     tenantName: tenantName,
-    iat: Math.floor(Date.now()  / 1000)
+    iat: Math.floor(Date.now()  / 1000) - 30  // Subtract 30 seconds to avoid sync issues with API and token start time
   }, jwtSecret);
 
 /**** Scenarios ****/
